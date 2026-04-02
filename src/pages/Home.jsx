@@ -95,13 +95,13 @@ export default function Home() {
             <div className="absolute -inset-10 bg-amber-600/10 rounded-full blur-[100px] opacity-100 group-hover:bg-amber-600/20 transition-all"></div>
             <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl shadow-black/50">
               <img 
-                src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&q=80&w=800" 
-                alt="Mas Rusdi - Master Barber" 
+                src="https://i.imgflip.com/7ecqf3.jpg" 
+                alt="Brandon Curington - Master Barber" 
                 className="w-full h-full object-cover grayscale brightness-110 shadow-inner group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
               <div className="absolute bottom-10 left-10">
-                <p className="text-amber-500 font-black text-4xl uppercase tracking-tighter">MAS RUSDI</p>
+                <p className="text-amber-500 font-black text-4xl uppercase tracking-tighter">BRANDON CURINGTON</p>
                 <p className="text-neutral-400 text-sm font-bold uppercase tracking-[0.4em] mt-1">The Master Barber</p>
               </div>
             </div>
@@ -111,7 +111,7 @@ export default function Home() {
             <span className="text-amber-500 font-bold uppercase tracking-[0.4em] text-xs px-4 py-2 bg-amber-600/10 rounded-full border border-amber-600/20">The Expertise</span>
             <h2 className="text-7xl font-black leading-[0.9] tracking-tighter uppercase italic">Keahlian <br /> Tanpa <span className="text-neutral-600">Batas.</span></h2>
             <p className="text-neutral-400 text-xl leading-relaxed font-medium">
-              Mas Rusdi bukan sekadar tukang cukur; ia adalah seniman yang memahami setiap lekuk dan karakter wajah. Dengan standar grooming Syariah, ia memastikan setiap pelanggan tampil prima dengan adab yang terjaga.
+              Brandon Curington bukan sekadar tukang cukur; ia adalah seniman yang memahami setiap lekuk dan karakter wajah. Dengan standar grooming Syariah, ia memastikan setiap pelanggan tampil prima dengan adab yang terjaga.
             </p>
             <div className="flex gap-12">
               <div className="space-y-1">
