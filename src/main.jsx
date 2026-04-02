@@ -6,10 +6,12 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import POSInput from './pages/POSInput'
 
+import Home from './pages/Home'
+
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Login />,
+    element: <Home />,
   },
   {
     path: "/login",
