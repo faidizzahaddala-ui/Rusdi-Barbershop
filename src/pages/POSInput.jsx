@@ -3,10 +3,10 @@ import { useNavigate } from 'react-router-dom';
 
 // Sample data produk Barbershop
 const MOCK_PRODUCTS = [
-  { id: 1, name: 'Gentleman Haircut', price: 50000, img: 'https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&q=80&w=800' },
-  { id: 2, name: 'Premium Hair Wash', price: 15000, img: 'https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&q=80&w=800' },
+  { id: 1, name: 'Gentleman Haircut', price: 50000, img: 'https://images.unsplash.com/photo-1621605815971-fbc38866ad9f?auto=format&fit=crop&q=80&w=800' },
+  { id: 2, name: 'Premium Hair Wash', price: 15000, img: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80&w=800' },
   { id: 3, name: 'Head & Shoulder Massage', price: 25000, img: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc2069?auto=format&fit=crop&q=80&w=800' },
-  { id: 4, name: 'Hair Color Treatment', price: 85000, img: 'https://images.unsplash.com/photo-1620331311520-246422ff83f9?auto=format&fit=crop&q=80&w=800' },
+  { id: 4, name: 'Hair Color Treatment', price: 85000, img: 'https://images.unsplash.com/photo-1541533848490-bc8115cd6522?auto=format&fit=crop&q=80&w=800' },
 ];
 
 export default function POSInput() {

@@ -27,21 +27,21 @@ export default function Home() {
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-neutral-950 z-10"></div>
-          {/* Using a very high quality, verified barbershop interior image */}
+          {/* Curated High-End Barbershop Hero */}
           <img 
-            src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=2000" 
+            src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&q=80&w=2000" 
             alt="Luxurious Barbershop Interior" 
-            className="w-full h-full object-cover scale-100 animate-pulse-slow active:scale-105 transition-transform duration-[20s]"
+            className="w-full h-full object-cover"
           />
         </div>
 
         <div className="relative z-20 text-center px-4 max-w-5xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-600/10 border border-amber-600/20 text-amber-500 text-[10px] font-black uppercase tracking-[0.4em] mb-10 mx-auto transform hover:scale-105 transition-transform">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-600/10 border border-amber-600/20 text-amber-500 text-[10px] font-black uppercase tracking-[0.4em] mb-10 mx-auto transition-transform">
             Premium Syariah Experience
           </div>
           <h1 className="text-7xl md:text-9xl font-black mb-8 leading-[0.85] tracking-tighter uppercase italic">
             PRIMA, GAGAH <br /> 
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-600 to-amber-400 animate-gradient-x underline decoration-amber-500/20">SESUAI SYARIAH</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-600 to-amber-400 animate-gradient-x underline decoration-amber-500/20 underline-offset-8">SESUAI SYARIAH</span>
           </h1>
           <p className="text-lg md:text-2xl text-neutral-400 mb-12 max-w-2xl mx-auto leading-relaxed font-medium">
             Destinasi grooming eksklusif <strong>Khusus Pria</strong> yang menggabungkan teknik modern dengan integritas nilai-nilai Amanah.
@@ -63,15 +63,15 @@ export default function Home() {
             <span className="text-amber-500 font-bold uppercase tracking-[0.4em] text-[10px] block mb-4">The Catalog</span>
             <h2 className="text-6xl font-black mb-0 tracking-tighter uppercase">Layanan <br /> <span className="text-neutral-500">Eksklusif</span></h2>
           </div>
-          <p className="text-neutral-400 max-w-xs text-right text-lg border-r-4 border-amber-600 pr-6 py-2">Kualitas terbaik dengan sentuhan profesional untuk menunjang penampilan pria.</p>
+          <p className="text-neutral-400 max-w-xs text-right text-lg border-r-4 border-amber-600 pr-6 py-2 uppercase font-black italic">Quality First.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
-            { id: 1, name: 'Gentleman Haircut', price: 'Rp 50k', img: 'https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&q=80&w=800', desc: 'Cuci rambut, potong, dan styling pomade premium.' },
-            { id: 2, name: 'Premium Hair Wash', price: 'Rp 15k', img: 'https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&q=80&w=800', desc: 'Pembersihan rambut mendalam dengan produk premium.' },
+            { id: 1, name: 'Gentleman Haircut', price: 'Rp 50k', img: 'https://images.unsplash.com/photo-1621605815971-fbc38866ad9f?auto=format&fit=crop&q=80&w=800', desc: 'Cuci rambut, potong, dan styling pomade premium.' },
+            { id: 2, name: 'Premium Hair Wash', price: 'Rp 15k', img: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80&w=800', desc: 'Pembersihan rambut mendalam dengan produk premium.' },
             { id: 3, name: 'Head Massage', price: 'Rp 25k', img: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc2069?auto=format&fit=crop&q=80&w=800', desc: 'Pijat relaksasi kepala dan bahu setelah potong.' },
-            { id: 4, name: 'Color Treatment', price: 'Rp 85k', img: 'https://images.unsplash.com/photo-1620331311520-246422ff83f9?auto=format&fit=crop&q=80&w=800', desc: 'Pewarnaan rambut profesional (Halal/Syariah).' },
+            { id: 4, name: 'Color Treatment', price: 'Rp 85k', img: 'https://images.unsplash.com/photo-1541533848490-bc8115cd6522?auto=format&fit=crop&q=80&w=800', desc: 'Pewarnaan rambut profesional (Halal/Syariah).' },
           ].map((service) => (
             <div key={service.id} className="group relative bg-neutral-900/50 border border-white/5 rounded-[2rem] overflow-hidden hover:bg-neutral-800 transition-all duration-500">
               <div className="h-64 overflow-hidden relative">
@@ -95,9 +95,9 @@ export default function Home() {
             <div className="absolute -inset-10 bg-amber-600/10 rounded-full blur-[100px] opacity-100 group-hover:bg-amber-600/20 transition-all"></div>
             <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl shadow-black/50">
               <img 
-                src="https://images.unsplash.com/photo-1593526492327-b071f3d5333e?auto=format&fit=crop&q=80&w=800" 
+                src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&q=80&w=800" 
                 alt="Mas Rusdi - Master Barber" 
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-cover grayscale brightness-110 shadow-inner group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
               <div className="absolute bottom-10 left-10">
