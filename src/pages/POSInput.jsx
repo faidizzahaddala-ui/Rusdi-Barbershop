@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { supabase } from '../lib/supabase';
 
-// Sample data produk Barbershop
+// Data cadangan jika database kosong
 const MOCK_PRODUCTS = [
   { id: 1, name: 'Gentleman Haircut', price: 50000, img: 'https://images.unsplash.com/photo-1621605815971-fbc38866ad9f?auto=format&fit=crop&q=80&w=800' },
   { id: 2, name: 'Premium Hair Wash', price: 15000, img: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80&w=800' },
@@ -10,10 +11,27 @@ const MOCK_PRODUCTS = [
 ];
 
 export default function POSInput() {
+  const [products, setProducts] = useState(MOCK_PRODUCTS);
   const [cart, setCart] = useState([]);
   const [isProcessing, setIsProcessing] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  const fetchProducts = async () => {
+    try {
+      const { data, error } = await supabase.from('products').select('*');
+      if (error) throw error;
+      if (data && data.length > 0) {
+        setProducts(data);
+      }
+    } catch (err) {
+      console.warn('Gagal memuat produk dari Supabase, menggunakan data cadangan.');
+    }
+  };
 
   const addToCart = (product) => {
     const existing = cart.find(item => item.id === product.id);
@@ -95,7 +113,7 @@ export default function POSInput() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {MOCK_PRODUCTS.map(product => (
+          {products.map(product => (
             <button
               key={product.id}
               onClick={() => addToCart(product)}
