@@ -22,6 +22,7 @@ export default function POSInput() {
     fetchProducts();
   }, []);
 
+  // [DATABASE NODE]: Mengambil data produk dari Supabase
   const fetchProducts = async () => {
     try {
       const { data, error } = await supabase.from('products').select('*');
@@ -43,9 +44,10 @@ export default function POSInput() {
     }
   };
 
+  // [TRIGGER NODE]: Pemicu aliran data saat tombol Checkout diklik
   const handleCheckout = () => {
     setIsProcessing(true);
-    // Simulasi proses pembayaran
+    // [DATABASE NODE]: Simulasi pengiriman data ke tabel 'sales'
     setTimeout(() => {
       setIsProcessing(false);
       setShowSuccess(true);
@@ -137,6 +139,7 @@ export default function POSInput() {
           ))}
         </div>
 
+        {/* [AI NODE]: Area validasi dan audit transaksi otomatis oleh Agen AI */}
         {/* AI Audit Result Section - Modul 2 Requirement */}
         <div className="mt-12 bg-white rounded-3xl p-8 shadow-sm border border-gray-100 relative overflow-hidden group">
           <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
