@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-// Sampel data produk
+// Sample data produk Barbershop
 const MOCK_PRODUCTS = [
-  { id: 1, name: 'Risol Mayo', price: 5000 },
-  { id: 2, name: 'Dimsum', price: 15000 },
-  { id: 3, name: 'Teh Tarik Jelly', price: 10000 },
+  { id: 1, name: 'Gentleman Haircut', price: 50000, img: 'https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&q=80&w=800' },
+  { id: 2, name: 'Premium Hair Wash', price: 15000, img: 'https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&q=80&w=800' },
+  { id: 3, name: 'Head & Shoulder Massage', price: 25000, img: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc2069?auto=format&fit=crop&q=80&w=800' },
+  { id: 4, name: 'Hair Color Treatment', price: 85000, img: 'https://images.unsplash.com/photo-1620331311520-246422ff83f9?auto=format&fit=crop&q=80&w=800' },
 ];
 
 export default function POSInput() {
@@ -43,22 +44,22 @@ export default function POSInput() {
   const zakat = totalBelanja * 0.025; // Zakat niaga 2.5%
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6 flex gap-6 relative font-sans text-gray-800">
+    <div className="min-h-screen bg-gray-50 p-6 flex gap-6 relative font-sans text-gray-800">
       
       {/* Success Modal Overlay */}
       {showSuccess && (
         <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4 backdrop-blur-sm animate-in fade-in duration-300">
           <div className="bg-white rounded-2xl p-8 max-w-sm w-full text-center shadow-2xl animate-in zoom-in duration-300">
-            <div className="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
-              <svg className="w-10 h-10 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="w-20 h-20 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-6 text-amber-600">
+              <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <h2 className="text-2xl font-bold text-gray-800 italic">"Jazakallahu Khairan"</h2>
-            <p className="mt-4 text-gray-600">Pembayaran telah berhasil diproses. Semoga berkah bagi semua.</p>
+            <h2 className="text-2xl font-black text-gray-800 italic uppercase tracking-tighter">"Jazakallahu Khairan"</h2>
+            <p className="mt-4 text-gray-600 font-medium">Pembayaran telah berhasil diproses. Semoga berkah bagi semua.</p>
             <button 
               onClick={() => setShowSuccess(false)}
-              className="mt-8 w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-bold transition shadow-lg shadow-emerald-200 active:scale-95"
+              className="mt-8 w-full py-4 bg-amber-600 hover:bg-amber-700 text-black font-black rounded-xl transition shadow-lg shadow-amber-200 active:scale-95 uppercase tracking-widest text-sm"
             >
               Transaksi Baru
             </button>
@@ -68,19 +69,22 @@ export default function POSInput() {
 
       {/* Bagian Kiri: Grid Produk */}
       <div className={`flex-1 transition-all duration-300 ${isProcessing ? 'opacity-50 pointer-events-none' : ''}`}>
-        <div className="flex justify-between items-center mb-8 bg-white p-4 rounded-xl shadow-sm">
-          <div>
-            <h1 className="text-2xl font-bold text-gray-800">Menu Kasir</h1>
-            <p className="text-sm text-gray-500">Rusdi Barbershop - POS Syariah</p>
+        <div className="flex justify-between items-center mb-8 bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 bg-amber-600 rounded-xl flex items-center justify-center text-black font-black text-2xl shadow-lg shadow-amber-900/10">R</div>
+            <div>
+              <h1 className="text-2xl font-black text-gray-900 uppercase tracking-tighter">Menu Kasir</h1>
+              <p className="text-[10px] text-amber-600 font-bold uppercase tracking-widest">Rusdi Barbershop - POS Syariah</p>
+            </div>
           </div>
           <div className="flex items-center gap-4">
-            <span className="hidden md:inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-100">
-              <svg className="w-3.5 h-3.5 mr-1.5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
+            <span className="hidden md:inline-flex items-center px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest bg-amber-50 text-amber-700 border border-amber-100">
+              <svg className="w-3.5 h-3.5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
               Audit Syariah Aktif
             </span>
             <button 
               onClick={handleLogout}
-              className="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors group"
+              className="p-3 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-xl transition-all group"
               title="Keluar"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -95,14 +99,19 @@ export default function POSInput() {
             <button
               key={product.id}
               onClick={() => addToCart(product)}
-              className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all border border-gray-100 text-left group relative overflow-hidden"
+              className="bg-white rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all border border-gray-100 text-left group relative overflow-hidden flex flex-col"
             >
-              <div className="absolute top-0 right-0 w-16 h-16 bg-emerald-50 rounded-bl-3xl -mr-8 -mt-8 group-hover:bg-emerald-100 transition-colors"></div>
-              <h3 className="font-bold text-gray-800 text-lg group-hover:text-emerald-700 relative z-10">{product.name}</h3>
-              <p className="text-emerald-600 font-bold mt-2 text-xl">Rp {product.price.toLocaleString('id-ID')}</p>
-              <div className="mt-4 flex items-center text-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity">
-                <span className="text-xs font-semibold">Tambah ke Struk</span>
-                <span className="ml-1">→</span>
+              <div className="h-40 overflow-hidden relative">
+                <img src={product.img} alt={product.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-white/90 to-transparent"></div>
+              </div>
+              <div className="p-6 pt-2">
+                <h3 className="font-bold text-gray-800 text-lg group-hover:text-amber-700 transition-colors">{product.name}</h3>
+                <p className="text-amber-600 font-black mt-1 text-2xl tracking-tighter">Rp {product.price.toLocaleString('id-ID')}</p>
+                <div className="mt-4 flex items-center text-amber-500 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <span className="text-[10px] font-black uppercase tracking-widest">Tambah ke Struk</span>
+                  <span className="ml-1">→</span>
+                </div>
               </div>
             </button>
           ))}
