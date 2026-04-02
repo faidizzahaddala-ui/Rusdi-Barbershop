@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
+import Layout from '../components/Layout';
 
 // Data cadangan jika database kosong
 const MOCK_PRODUCTS = [
@@ -62,9 +63,10 @@ export default function POSInput() {
   const zakat = totalBelanja * 0.025; // Zakat niaga 2.5%
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6 flex gap-6 relative font-sans text-gray-800">
-      
-      {/* Success Modal Overlay */}
+    <Layout>
+      <div className="flex gap-8 relative font-sans text-gray-800 animate-in fade-in slide-in-from-bottom-4 duration-700">
+        
+        {/* Success Modal Overlay */}
       {showSuccess && (
         <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4 backdrop-blur-sm animate-in fade-in duration-300">
           <div className="bg-white rounded-2xl p-8 max-w-sm w-full text-center shadow-2xl animate-in zoom-in duration-300">
@@ -225,7 +227,7 @@ export default function POSInput() {
           </button>
         </div>
       </div>
-
-    </div>
+      </div>
+    </Layout>
   );
 }
