@@ -45,14 +45,51 @@ export default function POSInput() {
   };
 
   // [TRIGGER NODE]: Pemicu aliran data saat tombol Checkout diklik
-  const handleCheckout = () => {
+  const handleCheckout = async () => {
+    if (cart.length === 0) return;
+    
     setIsProcessing(true);
-    // [DATABASE NODE]: Simulasi pengiriman data ke tabel 'sales'
-    setTimeout(() => {
+    
+    try {
+      // [DATABASE NODE]: Simpan transaksi ke tabel 'sales'
+      // Menyiapkan data untuk batch insert
+      const salesPayload = cart.map(item => ({
+        product_id: item.id,
+        qty: item.qty,
+        total_price: item.price * item.qty,
+        vendor_name: 'Rusdi Barbershop' // Bisa diambil dari session user
+      }));
+
+      const { error: salesError } = await supabase
+        .from('sales')
+        .insert(salesPayload);
+
+      if (salesError) throw salesError;
+
+      // [DATABASE NODE]: Update stok produk di tabel 'products'
+      // Kita lakukan update secara berurutan untuk setiap item di keranjang
+      for (const item of cart) {
+        const newStock = (item.stock || 0) - item.qty;
+        
+        const { error: stockError } = await supabase
+          .from('products')
+          .update({ stock: Math.max(0, newStock) })
+          .eq('id', item.id);
+        
+        if (stockError) throw stockError;
+      }
+
+      // Berhasil
       setIsProcessing(false);
       setShowSuccess(true);
       setCart([]);
-    }, 2000);
+      fetchProducts(); // Refresh data produk & stok terbaru dari database
+      
+    } catch (err) {
+      console.error('Error during checkout:', err);
+      alert('Gagal memproses transaksi: ' + (err.message || 'Terjadi kesalahan sistem.'));
+      setIsProcessing(false);
+    }
   };
 
   const handleLogout = () => {
