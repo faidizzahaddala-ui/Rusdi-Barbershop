@@ -68,9 +68,9 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
-            { id: 1, name: 'Gentleman Haircut', price: 'Rp 50k', img: 'https://images.unsplash.com/photo-1621605815971-fbc38866ad9f?auto=format&fit=crop&q=80&w=800', desc: 'Cuci rambut, potong, dan styling pomade premium.' },
+            { id: 1, name: 'Gentleman Haircut', price: 'Rp 50k', img: 'https://images.unsplash.com/photo-1593702295094-aea22597af65?auto=format&fit=crop&q=80&w=800', desc: 'Cuci rambut, potong, dan styling pomade premium.' },
             { id: 2, name: 'Premium Hair Wash', price: 'Rp 15k', img: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80&w=800', desc: 'Pembersihan rambut mendalam dengan produk premium.' },
-            { id: 3, name: 'Head Massage', price: 'Rp 25k', img: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc2069?auto=format&fit=crop&q=80&w=800', desc: 'Pijat relaksasi kepala dan bahu setelah potong.' },
+            { id: 3, name: 'Head Massage', price: 'Rp 25k', img: 'https://images.unsplash.com/photo-1541533848490-bc8115cd6522?auto=format&fit=crop&q=80&w=800', desc: 'Pijat relaksasi kepala dan bahu setelah potong.' },
             { id: 4, name: 'Color Treatment', price: 'Rp 85k', img: 'https://images.unsplash.com/photo-1541533848490-bc8115cd6522?auto=format&fit=crop&q=80&w=800', desc: 'Pewarnaan rambut profesional (Halal/Syariah).' },
           ].map((service) => (
             <div key={service.id} className="group relative bg-neutral-900/50 border border-white/5 rounded-[2rem] overflow-hidden hover:bg-neutral-800 transition-all duration-500">
@@ -132,17 +132,17 @@ export default function Home() {
       <section className="py-24 bg-amber-600">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-16 text-black">
           <div className="space-y-6 transform hover:-translate-y-2 transition-transform">
-            <div className="w-16 h-1 w-24 bg-black"></div>
+            <div className="w-16 h-1 bg-black"></div>
             <h3 className="text-4xl font-black uppercase tracking-tighter italic leading-none">NO QAZA' <br /> PRINCIPLE.</h3>
             <p className="font-bold opacity-80 text-sm leading-relaxed cursor-default">Kami menjaga sunnah dengan tidak melakukan potongan yang dilarang agama, tetap tampil modern tanpa melanggar adab.</p>
           </div>
           <div className="space-y-6 transform hover:-translate-y-2 transition-transform">
-            <div className="w-16 h-1 w-24 bg-black"></div>
+            <div className="w-16 h-1 bg-black"></div>
             <h3 className="text-4xl font-black uppercase tracking-tighter italic leading-none">BERSIH & <br /> AMANAH.</h3>
             <p className="font-bold opacity-80 text-sm leading-relaxed cursor-default">Seluruh peralatan disterilisasi sebelum digunakan. Kami menjamin kebersihan alat dan kualitas pelayanan yang jujur.</p>
           </div>
           <div className="space-y-6 transform hover:-translate-y-2 transition-transform">
-            <div className="w-16 h-1 w-24 bg-black"></div>
+            <div className="w-16 h-1 bg-black"></div>
             <h3 className="text-4xl font-black uppercase tracking-tighter italic leading-none">AUTO-ZAKAT <br /> NIAGA.</h3>
             <p className="font-bold opacity-80 text-sm leading-relaxed cursor-default">Setiap rupiah yang Anda bayarkan otomatis dialokasikan untuk zakat sebesar 2.5% guna kemaslahatan umat.</p>
           </div>

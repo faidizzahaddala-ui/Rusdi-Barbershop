@@ -16,6 +16,13 @@ export default function Login() {
     setError('');
     
     try {
+      // Demo / Fallback login agar aplikasi tetap bisa ditest di Vercel walau Supabase belum diseting
+      if (email === 'kasir@rusdi.com' && password === 'kasir123') {
+        setIsSuccess(true);
+        setTimeout(() => navigate('/pos'), 1500);
+        return;
+      }
+
       const { data, error: authError } = await supabase.auth.signInWithPassword({
         email,
         password,

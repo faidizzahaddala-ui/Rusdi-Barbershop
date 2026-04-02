@@ -6,8 +6,8 @@ import Layout from '../components/Layout';
 // Data cadangan jika database kosong
 const MOCK_PRODUCTS = [
   { id: 1, name: 'Gentleman Haircut', price: 50000, img: 'https://images.unsplash.com/photo-1593702295094-aea22597af65?auto=format&fit=crop&q=80&w=1080' },
-  { id: 2, name: 'Premium Hair Wash', price: 15000, img: 'https://images.unsplash.com/photo-1593702281483-e18e0018868c?auto=format&fit=crop&q=80&w=1080' },
-  { id: 3, name: 'Head & Shoulder Massage', price: 25000, img: 'https://images.unsplash.com/photo-1593702281416-627ca06c8f9c?auto=format&fit=crop&q=80&w=1080' },
+  { id: 2, name: 'Premium Hair Wash', price: 15000, img: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80&w=1080' },
+  { id: 3, name: 'Head & Shoulder Massage', price: 25000, img: 'https://images.unsplash.com/photo-1541533848490-bc8115cd6522?auto=format&fit=crop&q=80&w=1080' },
   { id: 4, name: 'Hair Color Treatment', price: 85000, img: 'https://images.unsplash.com/photo-1541533848490-bc8115cd6522?auto=format&fit=crop&q=80&w=1080' },
 ];
 
