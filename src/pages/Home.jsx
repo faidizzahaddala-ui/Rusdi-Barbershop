@@ -51,13 +51,13 @@ export default function Home() {
               Mulai Transaksi POS
               <svg className="w-6 h-6 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
             </Link>
-            <button className="px-10 py-5 border-2 border-white/10 hover:border-amber-600/50 hover:bg-white/5 rounded-2xl font-black text-xl transition-all backdrop-blur-md uppercase tracking-tighter">Lihat Layanan</button>
+            <a href="#services" className="px-10 py-5 border-2 border-white/10 hover:border-amber-600/50 hover:bg-white/5 rounded-2xl font-black text-xl transition-all backdrop-blur-md uppercase tracking-tighter">Lihat Layanan</a>
           </div>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="py-32 px-6 max-w-7xl mx-auto">
+      <section id="services" className="py-32 px-6 max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
           <div>
             <span className="text-amber-500 font-bold uppercase tracking-[0.4em] text-[10px] block mb-4">The Catalog</span>
@@ -152,9 +152,9 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-20 border-t border-white/5 px-6 text-center space-y-8">
         <div className="flex justify-center gap-6">
-          <a href="#" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-all">FB</a>
-          <a href="#" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-all">IG</a>
-          <a href="#" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-all">TW</a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-all">FB</a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-all">IG</a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-all">TW</a>
         </div>
         <p className="text-neutral-500 font-medium italic">"Tunaikanlah amanah kepada orang yang mempercayaimu."</p>
         <div className="pt-8 border-t border-white/5">
