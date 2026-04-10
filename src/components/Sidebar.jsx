@@ -1,6 +1,7 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-// Inline SVG Icons to avoid dependency issues
+// ... (keep Icons)
 const Icons = {
   LayoutDashboard: () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>,
   Users: () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M17 11l2 2 4-4"/></svg>,
@@ -15,16 +16,32 @@ const Icons = {
 };
 
 const Sidebar = () => {
+  const navigate = useNavigate();
+
   const menuItems = [
     { icon: Icons.LayoutDashboard, text: 'Dashboard', active: false },
     { icon: Icons.Users, text: 'Pelanggan', active: false },
-    { icon: Icons.ShoppingCart, text: 'Kasir', active: false },
+    { icon: Icons.ShoppingCart, text: 'Kasir', active: true, path: '/pos' },
     { icon: Icons.FileText, text: 'Laporan Kas', active: false },
     { icon: Icons.Package, text: 'Inventaris', active: false },
     { icon: Icons.Contact, text: 'Karyawan', active: false },
-    { icon: Icons.Scissors, text: 'Manajemen Layanan', active: true },
+    { icon: Icons.Scissors, text: 'Manajemen Layanan', active: false },
     { icon: Icons.Settings, text: 'Pengaturan', active: false },
   ];
+
+  const handleMenuClick = (item) => {
+    if (item.path) {
+      navigate(item.path);
+    } else {
+      alert(`Fitur \${item.text} masih dalam tahap pengembangan.`);
+    }
+  };
+
+  const handleLogout = () => {
+    if (window.confirm('Apakah Anda yakin ingin keluar dari sistem?')) {
+      navigate('/login');
+    }
+  };
 
   return (
     <div className="fixed left-0 top-0 h-screen w-64 bg-slate-950 border-r border-white/5 flex flex-col z-50 font-sans shadow-2xl">
@@ -43,14 +60,15 @@ const Sidebar = () => {
         {menuItems.map((item, index) => (
           <button
             key={index}
-            className={`w-full flex items-center gap-4 px-4 py-3.5 rounded-xl transition-all duration-300 group ${
+            onClick={() => handleMenuClick(item)}
+            className={`w-full flex items-center gap-4 px-4 py-3.5 rounded-xl transition-all duration-300 group \${
               item.active 
                 ? 'bg-slate-800 text-white shadow-lg shadow-black/20' 
                 : 'text-slate-400 hover:bg-slate-900 hover:text-white'
             }`}
           >
             <item.icon className="transition-colors" />
-            <span className={`text-sm font-bold tracking-tight ${
+            <span className={`text-sm font-bold tracking-tight \${
               item.active ? 'font-black' : 'font-semibold'
             }`}>
               {item.text}
@@ -64,7 +82,10 @@ const Sidebar = () => {
 
       {/* Footer */}
       <div className="p-4 mt-auto border-t border-white/5">
-        <button className="w-full flex items-center gap-4 px-4 py-4 text-slate-400 hover:text-red-400 hover:bg-red-500/10 rounded-2xl transition-all group">
+        <button 
+          onClick={handleLogout}
+          className="w-full flex items-center gap-4 px-4 py-4 text-slate-400 hover:text-red-400 hover:bg-red-500/10 rounded-2xl transition-all group"
+        >
           <Icons.LogOut />
           <span className="text-sm font-black uppercase tracking-widest">Logout System</span>
         </button>
